@@ -35,11 +35,11 @@
                                     @method('PATCH')
                                     <tbody>
                                         <tr>
-                                            <td>ID</td>
+                                            <th>ID</th>
                                             <td>{{$category->id}}</td>
                                         </tr>
                                         <tr>
-                                            <td>Name</td>
+                                            <th>Name</th>
                                             <td><input class="form-control" type="text" value="{{ $category->title }}" name="title" autofocus></td>
                                         </tr>
                                     </tbody>

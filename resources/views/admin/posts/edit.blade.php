@@ -41,10 +41,12 @@
                                         <label class="" for="name">Preview image:</label>
                                     </div>
                                     <div class="form-group col-10 w-50">
-                                    <img class="w-25 border" src="{{ asset('storage/' . $post->preview_image) }}" alt="preview image">
+                                        <img class="w-25 border" src="{{ asset('storage/' . $post->preview_image) }}"
+                                            alt="preview image">
                                         <div class="input-group w-100">
                                             <div class="custom-file">
-                                                <input class="custom-file-input" type="file" name="preview_image" autofocus>
+                                                <input class="custom-file-input" type="file" name="preview_image"
+                                                    autofocus>
                                                 <label class="custom-file-label" for="exampleInputFile">Choose
                                                     file</label>
                                             </div>
@@ -57,27 +59,7 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="form-row w-100 mt-3">
-                                    <div class="form-group col-2">
-                                        <label class="" for="name">Post image:</label>
-                                    </div>
-                                    <div class="form-group col-10 w-50">
-                                        <img class="w-25 border" src="{{ asset('storage/' . $post->post_image) }}" alt="post image">
-                                        <div class="input-group w-100">
-                                            <div class="custom-file">
-                                                <input class="custom-file-input" type="file" name="post_image">
-                                                <label class="custom-file-label" for="exampleInputFile">Choose
-                                                    file</label>
-                                            </div>
-                                            <div class="input-group-append">
-                                                <span class="input-group-text">Upload</span>
-                                            </div>
-                                        </div>
-                                        @error('post_image')
-                                        <div class="text-danger">{{ $message }}</div>
-                                        @enderror
-                                    </div>
-                                </div>
+
                                 <div class="form-row w-100 mt-3">
                                     <div class="form-group col-2">
                                         <label class="" for="title">Title:</label>
@@ -90,17 +72,20 @@
                                         @enderror
                                     </div>
                                 </div>
+
                                 <div class="form-row w-100 mt-3">
                                     <div class="form-group col-2">
                                         <label class="" for="content">Content:</label>
                                     </div>
                                     <div class="form-group col-10 w-100">
-                                        <textarea id="summernote" name="content">{{ old('content', $post->content) }}</textarea>
+                                        <textarea id="summernote"
+                                            name="content">{{ old('content', $post->content) }}</textarea>
                                         @error('content')
                                         <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
                                 </div>
+
                                 <div class="form-row w-100 mt-3">
                                     <div class="form-group col-2">
                                         <label class="" for="category_id">Category:</label>
@@ -119,6 +104,7 @@
                                         @enderror
                                     </div>
                                 </div>
+
                                 <div class="form-row w-100 mt-3">
                                     <div class="form-group col-2">
                                         <label class="" for="tag_id">Tags:</label>

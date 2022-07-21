@@ -10,8 +10,8 @@
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="{{ route('admin.index') }}">Home</a></li>
-                        <li class="breadcrumb-item active">Categories</li>
+                        <li class="breadcrumb-item"><a href="{{ route('personal.index') }}">Home</a></li>
+                        <li class="breadcrumb-item active">Your Comments</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -45,7 +45,7 @@
                                         <td>{{$comment->message}}</td>
                                         <td>
                                             <a class='ml-2' href="{{ route('personal.comment.edit', $comment->id) }}"><i class="text-warning fa-solid fa-pencil"></i></a>
-
+                                            
                                             <form class="d-inline" method="POST"
                                                 action="{{ route('personal.comment.delete', $comment->id) }}">
                                                 @csrf
@@ -54,7 +54,6 @@
                                                 <button type="submit" class="border-0 bg-white p-0">
                                                     <i class="ml-2 text-danger fa-solid fa-trash-can" role="button"></i>
                                                 </button>
-
                                             </form>
                                         </td>
                                     </tr>

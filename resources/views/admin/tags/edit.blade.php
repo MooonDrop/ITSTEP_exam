@@ -38,11 +38,11 @@
                                     <tbody>
                                         <tr>
                                             <th>ID</th>
-                                            <th>{{$tag->id}}</th>
+                                            <td>{{$tag->id}}</td>
                                         </tr>
                                         <tr>
                                             <th>Name</th>
-                                            <th><input class="form-control" type="text" value="{{ $tag->title }}" name="title" autofocus></th>
+                                            <td><input class="form-control" type="text" value="{{ $tag->title }}" name="title" autofocus></td>
                                         </tr>
                                     </tbody>
                             </table>

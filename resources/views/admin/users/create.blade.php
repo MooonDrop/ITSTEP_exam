@@ -59,7 +59,7 @@
                         <select class="form-control w-100" name="role">
                             @foreach($roles as $id => $role)
                             <option value="{{ $id }}"
-                                {{ $id == old('role_id') ? 'selected' : '' }}>{{ $role }}
+                                {{ $id == old('role') ? 'selected' : '' }}>{{ $role }}
                             </option>
                             @endforeach
                         </select>

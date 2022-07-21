@@ -50,29 +50,10 @@
                 </div>
                 <div class="form-row w-100 mt-3">
                     <div class="form-group col-2">
-                        <label class="" for="name">Post image:</label>
-                    </div>
-                    <div class="form-group col-10 w-50">
-                        <div class="input-group w-100">
-                            <div class="custom-file">
-                                <input class="custom-file-input" type="file" name="post_image">
-                                <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                            </div>
-                            <div class="input-group-append">
-                                <span class="input-group-text">Upload</span>
-                            </div>
-                        </div>
-                        @error('post_image')
-                        <div class="text-danger">{{ $message }}</div>
-                        @enderror
-                    </div>
-                </div>
-                <div class="form-row w-100 mt-3">
-                    <div class="form-group col-2">
                         <label class="" for="title">Title:</label>
                     </div>
                     <div class="form-group col-10 w-50">
-                        <input class="form-control w-100" name="title" type="text" placeholder="Name...">
+                        <input class="form-control w-100" name="title" type="text" placeholder="Name..." value="{{ old('title') }}">
                         @error('title')
                         <div class="text-danger">{{ $message }}</div>
                         @enderror
@@ -117,7 +98,7 @@
                                 <option {{ is_array(old('tag_ids')) && in_array($tag->id, old('tag_ids')) ? 'selected' : '' }} value="{{ $tag->id }}">{{ $tag->title }}</option>
                             @endforeach
                         </select>
-                        @error('category_id')
+                        @error('tag_ids')
                         <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>

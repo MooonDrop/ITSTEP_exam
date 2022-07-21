@@ -43,6 +43,14 @@
                     </p>
                 </a>
             </li>
+            <li class="nav-item">
+                <a href="{{ route('main.index') }}" class="nav-link">
+                    <p>
+                        <i class="nav-icon fa-solid fa-arrow-right-from-bracket"></i>
+                        To blog
+                    </p>
+                </a>
+            </li>
         </ul>
     </div>
     <!-- /.sidebar -->

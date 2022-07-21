@@ -2,9 +2,11 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use PhpParser\Builder\Function_;
 
 class Post extends Model
 {
@@ -12,6 +14,8 @@ class Post extends Model
 
 
     protected $guarded = false; 
+
+    protected $with = ['category'];
 
     public function tags(){
         //получение тегов у конкретной модели поста 
@@ -24,5 +28,13 @@ class Post extends Model
 
     public function likedUsers(){
         return $this->belongsToMany(User::class, 'post_user_likes', 'post_id', 'user_id');
+    }
+
+    public function comments(){
+        return $this->hasMany(Comment::class, 'post_id', 'id');
+    }
+
+    public function getDateAsCarbonAttribute(){
+        return Carbon::parse($this->created_at);
     }
 }

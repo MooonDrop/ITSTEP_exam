@@ -9,6 +9,13 @@ use Illuminate\Http\Request;
 class ShowController extends Controller
 {
     public function __invoke(User $user){
-        return view('admin.users.show',compact('user'));
+        $allRoles = User::getRoles();
+        $currentRole = null;
+        foreach($allRoles as $roleId => $roleName){
+            if($user->role == $roleId){
+                $currentRole = $roleName;
+            }
+        }
+        return view('admin.users.show',compact('user', 'currentRole'));
     }
 }

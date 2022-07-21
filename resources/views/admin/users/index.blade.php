@@ -51,16 +51,16 @@
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Title</th>
+                                        <th>Name</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($users as $user)
                                     <tr>
-                                        <th>{{$user->id}}</th>
-                                        <th>{{$user->name}}</th>
-                                        <th>
+                                        <td>{{$user->id}}</td>
+                                        <td>{{$user->name}}</td>
+                                        <td>
                                             <a href="{{ route('admin.user.show', $user->id) }}"><i class="fa-solid fa-eye"></i></a>
                                             <a class='ml-2' href="{{ route('admin.user.edit', $user->id) }}"><i class="text-warning fa-solid fa-pencil"></i></a>
                                             <form class="d-inline" method="POST" action="{{ route('admin.user.delete', $user->id) }}">
@@ -71,7 +71,7 @@
                                                 </button>
                                             </form>
                                             
-                                        </th>
+                                        </td>
                                     </tr>
                                 @endforeach
                                 </tbody>

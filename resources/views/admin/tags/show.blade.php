@@ -35,11 +35,11 @@
                                 <tbody>
                                     <tr>
                                         <th>ID</th>
-                                        <th>{{$tag->id}}</th>
+                                        <td>{{$tag->id}}</td>
                                     </tr>
                                     <tr>
                                         <th>Title</th>
-                                        <th>{{$tag->title}}</th>
+                                        <td>{{$tag->title}}</td>
                                     </tr>
                                 </tbody>
                             </table>

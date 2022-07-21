@@ -58,9 +58,9 @@
                                 <tbody>
                                 @foreach($tags as $tag)
                                     <tr>
-                                        <th>{{$tag->id}}</th>
-                                        <th>{{$tag->title}}</th>
-                                        <th>
+                                        <td>{{$tag->id}}</td>
+                                        <td>{{$tag->title}}</td>
+                                        <td>
                                             <a href="{{ route('admin.tag.show', $tag->id) }}"><i class="fa-solid fa-eye"></i></a>
                                             <a class='ml-2' href="{{ route('admin.tag.edit', $tag->id) }}"><i class="text-warning fa-solid fa-pencil"></i></a>
                                             <form class="d-inline" method="POST" action="{{ route('admin.tag.delete', $tag->id) }}">
@@ -71,7 +71,7 @@
                                                 </button>
                                             </form>
                                             
-                                        </th>
+                                        </td>
                                     </tr>
                                 @endforeach
                                 </tbody>

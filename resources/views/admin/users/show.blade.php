@@ -35,11 +35,15 @@
                                 <tbody>
                                     <tr>
                                         <th>ID</th>
-                                        <th>{{$user->id}}</th>
+                                        <td>{{$user->id}}</td>
                                     </tr>
                                     <tr>
-                                        <th>Title</th>
-                                        <th>{{$user->name}}</th>
+                                        <th>Name</th>
+                                        <td>{{$user->name}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Role</th>
+                                        <td>{{ $currentRole }}</td>
                                     </tr>
                                 </tbody>
                             </table>

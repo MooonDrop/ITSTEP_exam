@@ -58,9 +58,9 @@
                                 <tbody>
                                 @foreach($categories as $category)
                                     <tr>
-                                        <th>{{$category->id}}</th>
-                                        <th>{{$category->title}}</th>
-                                        <th>
+                                        <td>{{$category->id}}</td>
+                                        <td>{{$category->title}}</td>
+                                        <td>
                                             <a href="{{ route('admin.category.show', $category->id) }}"><i class="fa-solid fa-eye"></i></a>
                                             <a class='ml-2' href="{{ route('admin.category.edit', $category->id) }}"><i class="text-warning fa-solid fa-pencil"></i></a>
                                             <form class="d-inline" method="POST" action="{{ route('admin.category.delete', $category->id) }}">
@@ -71,7 +71,7 @@
                                                 </button>
                                             </form>
                                             
-                                        </th>
+                                        </td>
                                     </tr>
                                 @endforeach
                                 </tbody>

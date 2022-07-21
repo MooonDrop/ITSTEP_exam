@@ -20,7 +20,6 @@ class PostService
 
             //сохранение файла и присвоение значений (Storage::put() returns 'путь к сохраненному файлу')
             $data['preview_image'] = Storage::disk('public')->put('/images', $data['preview_image']);
-            $data['post_image'] = Storage::disk('public')->put('/images', $data['post_image']);   
 
             $post = Post::firstOrCreate($data);
             $post->tags()->attach($tagIds);
@@ -44,11 +43,7 @@ class PostService
             //сохранение файла и присвоение значений (Storage::put() returns 'путь к сохраненному файлу')
             if(isset($data['preview_image'])){
                 $data['preview_image'] = Storage::disk('public')->put('/images', $data['preview_image']);
-            }
-
-            if(isset($data['post_image'])){
-                $data['post_image'] = Storage::disk('public')->put('/images', $data['post_image']);
-            }    
+            }  
         
             $post->update($data);
             $post->tags()->sync($tagIds);

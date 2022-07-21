@@ -1,5 +1,6 @@
 <?php
 
+use Doctrine\DBAL\Schema\Index;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -19,16 +20,41 @@ use Psy\Command\EditCommand;
 
 Route::group(['namespace' => 'App\Http\Controllers\Main'], function(){
 
-    Route::get('/', IndexController::class);
+    Route::get('/', IndexController::class)->name('main.index');
 
 });
+
+Route::group(['namespace' => 'App\Http\Controllers\Post', 'prefix' => 'posts'], function(){
+    
+    Route::get('show/{post}', ShowController::class)->name('post.show');
+
+    Route::group(['namespace' => 'Comment', 'prefix' => '{post}/comments'], function(){
+        Route::post('/', StoreController::class)->name('post.comment.store');
+    });
+
+    Route::group(['namespace' => 'Like', 'prefix' => '{post}/likes'], function(){
+        Route::post('/', StoreController::class)->name('post.like.store');
+    });
+
+});
+
+Route::group(['namespace' => 'App\Http\Controllers\Category', 'prefix' => 'categories'], function(){
+
+    Route::get('/', IndexController::class)->name('category.index');
+
+    Route::group(['namespace' => 'Post', 'prefix' => '{category}/posts'], function(){
+
+        Route::get('/', IndexController::class)->name('category.post.index');
+
+    });
+
+});
+
 
 Route::group(['namespace' => 'App\Http\Controllers\Personal', 'prefix' => 'personal', 'middleware' => ['auth', 'verified']], function(){
 
     Route::group(['namespace' => 'Main'], function(){
-
         Route::get('/', IndexController::class)->name('personal.index');
-
     });
 
     Route::group(['namespace' => 'Like', 'prefix' => 'likes'], function(){

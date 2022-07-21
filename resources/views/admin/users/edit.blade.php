@@ -42,7 +42,7 @@
                                     </div>
                                     <div class="form-group col-10">
                                         <input class="form-control w-100" name="name" type="text"
-                                            placeholder="Login...">
+                                            placeholder="Login..." value="{{ $user->name }}">
                                         @error('name')
                                         <div class="text-danger">{{ $message }}</div>
                                         @enderror
@@ -54,15 +54,31 @@
                                     </div>
                                     <div class="form-group col-10">
                                         <input class="form-control w-100" name="email" type="email"
-                                            placeholder="Email...">
+                                            placeholder="Email..." value="{{ $user->email }}">
                                         @error('email')
                                         <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
                                 </div>
                                 <div class="form-row w-100 mt-3">
-                                   <input type="hidden" name="user_id" value="{{ $user->id
-                                 }}">
+                                    <div class="form-group col-2">
+                                        <label class="" for="role_id">User role:</label>
+                                    </div>
+                                    <div class="form-group col-10 w-50">
+                                        <select class="form-control w-100" name="role">
+                                            @foreach($roles as $id => $role)
+                                            <option value="{{ $id }}" {{ $id == old('role') ? 'selected' : '' }}>
+                                                {{ $role }}
+                                            </option>
+                                            @endforeach
+                                        </select>
+                                        @error('role')
+                                        <div class="text-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="form-row w-100 mt-3">
+                                    <input type="hidden" name="user_id" value="{{ $user->id}}">
                                 </div>
                         </div>
                         <button class="btn btn-success" type="submit">Edit</button>

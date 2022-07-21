@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Dashboard</h1>
+                    <h1 class="m-0">Welcome, {{ auth()->user()->name }}</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -28,8 +28,7 @@
                     <!-- small box -->
                     <div class="small-box bg-info">
                         <div class="inner">
-                            <h3>12</h3>
-
+                            <h3>{{ auth()->user()->likedPosts->count() }}</h3>
                             <p>Liked Posts</p>
                         </div>
                         <div class="icon">
@@ -44,7 +43,7 @@
                     <!-- small box -->
                     <div class="small-box bg-success">
                         <div class="inner">
-                            <h3>34</h3>
+                            <h3>{{ auth()->user()->comments->count() }}</h3>
 
                             <p>Comments</p>
                         </div>

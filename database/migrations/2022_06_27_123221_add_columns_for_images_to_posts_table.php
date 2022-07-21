@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::table('posts', function (Blueprint $table) {
             $table->string('preview_image')->nullable();
-            $table->string('post_image')->nullable();
         });
     }
 
@@ -28,7 +27,6 @@ return new class extends Migration
     {
         Schema::table('posts', function (Blueprint $table) {
             $table->dropColumn('preview_image');
-            $table->dropColumn('post_image');
         });
     }
 };

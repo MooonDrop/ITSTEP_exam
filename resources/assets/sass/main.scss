@@ -89,7 +89,6 @@
     padding: 10px;
     color: white;
     transition: right 0.7s;
-    display: none;
     &__list{
         width: 100%;
     }
@@ -103,21 +102,16 @@
         color: white;
         // border: 1px solid white;
     }
-    &__item.logout{
+    &__item.logout, &__item.login, &__item.signup{
         width: 100%;
         border: none;
         border-radius: 5px;
         background-color: transparent;
-        padding: 15px 0 15px 0;
-        color: white;
+        color: $accent;
     }
 
     &__item:hover{
         color: white;
-        background-color: #718093;
-    }
-
-    &__item.logout:hover{
         background-color: #718093;
     }
 }
@@ -447,10 +441,6 @@
 
     .sidebar{
         display: none;
-    }
-
-    .sidemenu{
-        display: block;
     }
 
     .blog-post{

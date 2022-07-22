@@ -154,7 +154,6 @@ body {
   padding: 10px;
   color: white;
   transition: right 0.7s;
-  display: none;
 }
 .sidemenu__list {
   width: 100%;
@@ -167,19 +166,15 @@ body {
   cursor: pointer;
   color: white;
 }
-.sidemenu__item.logout {
+.sidemenu__item.logout, .sidemenu__item.login, .sidemenu__item.signup {
   width: 100%;
   border: none;
   border-radius: 5px;
   background-color: transparent;
-  padding: 15px 0 15px 0;
-  color: white;
+  color: #6E85B7;
 }
 .sidemenu__item:hover {
   color: white;
-  background-color: #718093;
-}
-.sidemenu__item.logout:hover {
   background-color: #718093;
 }
 
@@ -438,9 +433,6 @@ body {
   }
   .sidebar {
     display: none;
-  }
-  .sidemenu {
-    display: block;
   }
   .blog-post {
     min-height: 600px;

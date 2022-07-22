@@ -68,12 +68,8 @@
                         @endauth
 
                         @guest
-                            <li class="sidemenu__item">
-                                <a class="sidemenu__link" href="/login">Log in</a>
-                            </li>
-                            <li class="sidemenu__item">
-                                <a class="sidemenu__link" href="/register">Sign up</a>
-                            </li>
+                                <a class="sidemenu__item login" href="/login">Log in</a>
+                                <a class="sidemenu__item signup" href="/register">Sign up</a>
                         @endguest
                     </ul>
                 </aside>

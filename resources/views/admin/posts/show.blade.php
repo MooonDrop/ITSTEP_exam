@@ -45,10 +45,6 @@
                                         <th>Category</th>
                                         <td>{{$post->category->title}}</td>
                                     </tr>
-                                    <tr>
-                                        <th>Title</th>
-                                        <td>{{$post->title}}</td>
-                                    </tr>
                                 </tbody>
                             </table>
                         </div>

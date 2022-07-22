@@ -25,21 +25,26 @@
                         @endif
                     </ul>
 
-                    @auth()
-                    <ul class="blog-post__action-list popular-posts">
+                    <ul class="blog-post__action-list">
                         <li class="blog-post__action-list-item">
-                            <form class="blog-post__like-form" action="{{ route('post.like.store', $popularPost->id) }}"
-                                method="post">
+                            @auth()
+                            <form class="blog-post__like-form" action="{{ route('post.like.store', $popularPost->id) }}" method="post"> 
                                 @csrf
                                 <button class="blog-post__icon blog-post__icon--likes">
-                                    <i
-                                        class="fa-{{ auth()->user()->likedPosts->contains($popularPost->id) ? 'solid' : 'regular' }} fa-heart"></i>
+                                    <i class="fa-{{ auth()->user()->likedPosts->contains($popularPost->id) ? 'solid' : 'regular' }} fa-heart"></i>
                                     {{ $popularPost->likedUsers->count() }}
                                 </button>
                             </form>
+                            @endauth
+                                    
+                            @guest()
+                                <button class="blog-post__icon blog-post__icon--likes disabled">
+                                    <i class="fa-regular fa-heart"></i>
+                                    {{ $popularPost->likedUsers->count() }}
+                                </button>
+                            @endguest
                         </li>
                     </ul>
-                    @endauth
                 </article>
             </li>
             @endforeach
